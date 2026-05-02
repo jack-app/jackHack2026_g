@@ -21,13 +21,16 @@ export function ExplanationScreen({ explanation, onNext, isLast }: Props) {
       <div
         style={{
           flex: 1,
-          border: '2px solid black',
+          margin: '48px auto',
           padding: '32px',
+          paddingTop: '128px',
           boxSizing: 'border-box',
-        }}
+          backgroundImage: 'url(../src/assets/kaisetu.png)',
+          backgroundSize: 'cover',
+          maxWidth: '900px',
+          }}
       >
-        <h2 style={{ margin: '0 0 24px 0', fontSize: '24px' }}>解説</h2>
-        <p style={{ fontSize: '20px', lineHeight: 1.7, margin: 0 }}>{explanation}</p>
+        <p style={{ fontSize: '40px', lineHeight: '48px',  }}>{explanation}</p>
       </div>
 
       <div style={{ textAlign: 'right' }}>
