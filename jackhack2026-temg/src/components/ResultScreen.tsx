@@ -5,11 +5,12 @@ type Props = {
 };
 
 import '../finish.css'
+import { finishCommentContent } from '../data/finishcomment'
 
-function CorrectCount({ correctcount = 0 , questioncount  = 0 }) {
+function CorrectCount({ correctcountscore = 0, correctcounttotal = 0} ) {
     return (
         <div className = 'correctcount'>
-            {correctcount} / {questioncount} 問
+            {correctcountscore} / {correctcounttotal} 問
             <span className = 'correctcount-correct'>
                 正解
             </span>
@@ -18,12 +19,14 @@ function CorrectCount({ correctcount = 0 , questioncount  = 0 }) {
     )
 }
 
-function FinishComment() {
-    const finishcomment = 'よくがんばったね！すご～い！！'
+function FinishComment({ finishcommentscore = 0 } ) {
+    const finishcomment = finishCommentContent.find(finishCommentContent =>
+        finishCommentContent.id === finishcommentscore
+    );
 
     return (
         <div className = 'finishcomment'>
-            <p>{ finishcomment }</p>
+            <p>{ finishcomment?.comment }</p>
             <img />
         </div>
     )
@@ -37,17 +40,17 @@ function FinishCommentImg() {
     )
 }
 
-function BackToTitle() {
+function BackToTitle({onRestart} : {onRestart: () => void}) {
     return (
         <div className = 'backtotitle'>
-            <button>
+            <button onClick={(onRestart)}>
                 タイトルにもどる
             </button>
         </div>
     )
 }
 
-export function ResultScreen({score, total} : Props) {
+export function ResultScreen({score, total, onRestart} : Props) {
   return (
     
         <div className = 'result'>
@@ -55,12 +58,14 @@ export function ResultScreen({score, total} : Props) {
                 結果
             </div>
             <CorrectCount
-              correctcount={score}
-              questioncount={total}
+                correctcountscore={score}
+                correctcounttotal={total}
             />
-            <FinishComment />
+            <FinishComment
+                finishcommentscore={score}
+            />
             <FinishCommentImg />
-            <BackToTitle />
+            <BackToTitle onRestart={onRestart} />
         </div>
     )
 }
