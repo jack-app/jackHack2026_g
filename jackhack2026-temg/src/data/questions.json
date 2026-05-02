@@ -1,37 +1,352 @@
 [
   {
     "id": 1,
-    "question": "問題0",
-    "choices": ["正解0", "不正解0"],
-    "correctIndex": 0,
-    "explanation": "解説文0"
+    "question": "名古屋で有名な味噌　正しいのは？",
+    "choices": ["白味噌", "赤味噌"],
+    "correctIndex": 1,
+    "explanation": "白味噌は京都の西京味噌が有名です。名古屋では八丁味噌が有名です。"
   },
   {
     "id": 2,
-    "question": "問題1",
-    "choices": ["不正解1", "正解1"],
-    "correctIndex": 1,
-    "explanation": "解説文1"
+    "question": "平城京に遷都したのは？",
+    "choices": ["710年", "794年"],
+    "correctIndex": 0,
+    "explanation": "710(なっとう)ねばねば平城京、794(なくよ)ウグイス平安京で覚えましょう。"
   },
   {
     "id": 3,
-    "question": "問題2",
-    "choices": ["正解2", "不正解2"],
+    "question": "ラム肉 正しいのは？",
+    "choices": ["羊肉", "鹿肉"],
     "correctIndex": 0,
-    "explanation": "解説文2"
+    "explanation": "鹿肉はもみじと呼ばれます。"
   },
   {
     "id": 4,
-    "question": "問題3",
-    "choices": ["不正解3", "正解3"],
+    "question": "トルコの首都　正しいのは？",
+    "choices": ["イスタンブール", "アンカラ"],
     "correctIndex": 1,
-    "explanation": "解説文3"
+    "explanation": "イスタンブールはオスマン帝国時代の首都です。"
   },
   {
     "id": 5,
-    "question": "問題4",
-    "choices": ["正解4", "不正解4"],
+    "question": "人口が多いのは？",
+    "choices": ["名古屋市", "横浜市"],
+    "correctIndex": 1,
+    "explanation": "横浜市の人口は3,753,758人(2026年)なのに対し、名古屋市は2,338,074人です。ちなみに、横浜市は全国の市の人口ランキングで一位で、名古屋は三位です。(大阪市が二位)"
+  },
+  {
+    "id": 6,
+    "question": "日本の標準時子午線が通っているのは？",
+    "choices": ["東京23区", "明石市"],
+    "correctIndex": 1,
+    "explanation": "明石市は東経135度に位置しており、標準時子午線を設定するうえで都合がよかったのです。"
+  },
+  {
+    "id": 7,
+    "question": "日本で二番目に高い山　正しいのは？",
+    "choices": ["北岳", "槍ヶ岳"],
     "correctIndex": 0,
-    "explanation": "解説文4"
+    "explanation": "北岳は3193m、槍ヶ岳は3180mで日本で5番目に高い山です。"
+  },
+  {
+    "id": 8,
+    "question": "八事駅を通る地下鉄　名城線ともう一つは？",
+    "choices": ["桜通線", "鶴舞線"],
+    "correctIndex": 1,
+    "explanation": "桜通線と名城線の乗換駅は久屋大通駅と新瑞橋駅のみです。"
+  },
+  {
+    "id": 9,
+    "question": "dy/dxの表記　作ったのは？",
+    "choices": ["ライプニッツ", "オイラー"],
+    "correctIndex": 0,
+    "explanation": "これはライプニッツの記法と呼ばれています。"
+  },
+  {
+    "id": 10,
+    "question": "内閣は最高裁判所長官を？",
+    "choices": ["指名する", "任命する"],
+    "correctIndex": 0,
+    "explanation": "最高裁判所長官は内閣が指名し、天皇が任命します。"
+  },
+  {
+    "id": 11,
+    "question": "名古屋駅の玄関口　正しいのは？",
+    "choices": ["桜通口", "太閤通口"],
+    "correctIndex": 0,
+    "explanation": "太閤通口は新幹線側です。"
+  },
+  {
+    "id": 12,
+    "question": "名古屋市のペットボトルごみ　何曜日に出す？",
+    "choices": ["月曜日", "金曜日"],
+    "correctIndex": 1,
+    "explanation": "月曜日はプラスチック資源と電池類の日です。"
+  },
+  {
+    "id": 13,
+    "question": "高校数学の証明で使われるのは？",
+    "choices": ["数学的演繹法", "数学的帰納法"],
+    "correctIndex": 1,
+    "explanation": "数学的帰納法は高校数学Bで習います。"
+  },
+  {
+    "id": 14,
+    "question": "trespass の意味　正しいのは？",
+    "choices": ["不法侵入する", "合格する"],
+    "correctIndex": 0,
+    "explanation": "英検準1級レベルの単語です。"
+  },
+  {
+    "id": 15,
+    "question": "自営業の人　どっちに加入する？",
+    "choices": ["国民健康保険", "健康保険"],
+    "correctIndex": 0,
+    "explanation": "健康保険は会社員や公務員の人が加入します。"
+  },
+  {
+    "id": 16,
+    "question": "日本のクレジットカード会社　どっち？",
+    "choices": ["Visa", "JCB"],
+    "correctIndex": 1,
+    "explanation": "Visaはアメリカの企業です。"
+  },
+  {
+    "id": 17,
+    "question": "熱田神宮まで　近いのは？",
+    "choices": ["神宮前駅", "熱田駅"],
+    "correctIndex": 0,
+    "explanation": "熱田駅からだと徒歩8分、神宮前駅からだと徒歩3分です。"
+  },
+  {
+    "id": 18,
+    "question": "どっちが高い？",
+    "choices": ["中部電力MIRAI TOWER", "さっぽろテレビ塔"],
+    "correctIndex": 0,
+    "explanation": "中部電力MIRAI TOWERは180m、さっぽろテレビ塔は144mです。"
+  },
+  {
+    "id": 19,
+    "question": "デカルトが用いたのは？",
+    "choices": ["帰納法", "演繹法"],
+    "correctIndex": 1,
+    "explanation": "帰納法を用いたのはベーコンです。"
+  },
+  {
+    "id": 20,
+    "question": "設立年　古いのは？",
+    "choices": ["名古屋帝国大学", "慶応義塾大学"],
+    "correctIndex": 1,
+    "explanation": "名古屋帝国大学は1939年設立、慶応義塾大学は1920年に大学令による大学として新発足しました。"
+  },
+  {
+    "id": 21,
+    "question": "水は固体になると密度は？",
+    "choices": ["大きくなる", "小さくなる"],
+    "correctIndex": 1,
+    "explanation": "分子同士が水素結合により、すき間の多い六角形の結晶構造を作るため密度は小さくなります。"
+  },
+  {
+    "id": 22,
+    "question": "不安定なのは？",
+    "choices": ["ピクリン酸", "トリニトロベンゼン"],
+    "correctIndex": 0,
+    "explanation": "ピクリン酸は乾燥状態では危険性が高い物質として知られています。トリニトロベンゼンも危険な物質ですが、比較するとピクリン酸の方が不安定です。"
+  },
+  {
+    "id": 23,
+    "question": "沸点が高いのは？",
+    "choices": ["ウンデカン", "デカノール"],
+    "correctIndex": 1,
+    "explanation": "ウンデカンの沸点は約196℃、デカノールの沸点は約230℃です。"
+  },
+  {
+    "id": 24,
+    "question": "名古屋大学駅　できたのは？",
+    "choices": ["1971年", "2003年"],
+    "correctIndex": 1,
+    "explanation": "名古屋大学駅は名城線の環状化の前年、延伸によって開業しました。"
+  },
+  {
+    "id": 25,
+    "question": "どっちが大きい？",
+    "choices": ["愛知県", "千葉県"],
+    "correctIndex": 0,
+    "explanation": "愛知県の面積は約5116平方キロメートルに対し、千葉県は約5082平方キロメートルです。"
+  },
+  {
+    "id": 26,
+    "question": "天然ゴム　割合が多いのは？",
+    "choices": ["シス型", "トランス型"],
+    "correctIndex": 0,
+    "explanation": "シス型の構造のおかげで高い弾性を持ちます。"
+  },
+  {
+    "id": 27,
+    "question": "愛知県　人口第二位の都市は？",
+    "choices": ["豊橋市", "豊田市"],
+    "correctIndex": 1,
+    "explanation": "豊橋市の人口は361,979人(2026)で、豊田市の人口は414,394人(2026)です。"
+  },
+  {
+    "id": 28,
+    "question": "サークル名称　正しいのは？",
+    "choices": ["jack", "juck"],
+    "correctIndex": 0,
+    "explanation": "勘違いしないように注意。"
+  },
+  {
+    "id": 29,
+    "question": "先にできたのは？",
+    "choices": ["Java", "Python"],
+    "correctIndex": 1,
+    "explanation": "Pythonは1991年に最初のバージョンが公開された一方、Javaは1995年に正式リリースされました。"
+  },
+  {
+    "id": 30,
+    "question": "数学の二次試験でピッタリ直線が登場したのは？",
+    "choices": ["名古屋大学", "京都大学"],
+    "correctIndex": 0,
+    "explanation": "名古屋大学2006年理系数学第三問で出題されました。"
+  },
+  {
+    "id": 31,
+    "question": "センター試験の前の名称　正しいのは？",
+    "choices": ["大学入学共通センター試験", "大学共通第1次学力試験"],
+    "correctIndex": 1,
+    "explanation": "共通一次試験とも呼ばれています。1979年から1989年まで実施されていました。"
+  },
+  {
+    "id": 32,
+    "question": "名古屋から豊橋　早く着くのは？",
+    "choices": ["東海道線(在来線)", "名鉄"],
+    "correctIndex": 1,
+    "explanation": "名鉄だと快速特急で約50分、JRだと新快速で約55分です。"
+  },
+  {
+    "id": 33,
+    "question": "生徒数が多いのは？",
+    "choices": ["筑波大学", "名古屋大学"],
+    "correctIndex": 0,
+    "explanation": "筑波大学には16655人、名古屋大学には15771人の学生が在籍しています(2023)。"
+  },
+  {
+    "id": 34,
+    "question": "名古屋の百貨店　先にできたのは？",
+    "choices": ["松坂屋", "三越"],
+    "correctIndex": 0,
+    "explanation": "松坂屋は1925年に現在の場所に誕生し、三越は1980年に誕生しました。"
+  },
+  {
+    "id": 35,
+    "question": "tan1°は有理数か？",
+    "choices": ["有理数", "有理数でない"],
+    "correctIndex": 1,
+    "explanation": "tan1°が有理数であると仮定すると、倍角公式によりtan2°、tan4°、…、tan60°も有理数になります。しかしtan60°=√3であり有理数ではないため矛盾します。"
+  },
+  {
+    "id": 36,
+    "question": "adolescence 正しい意味は？",
+    "choices": ["青年期", "郵便配達先"],
+    "correctIndex": 0,
+    "explanation": "英検準1級の単語です。"
+  },
+  {
+    "id": 37,
+    "question": "nm(ナノメートル)　同値なのは？",
+    "choices": ["10^-6m", "10^-9m"],
+    "correctIndex": 1,
+    "explanation": "10^-6mはマイクロメートルです。"
+  },
+  {
+    "id": 38,
+    "question": "密度が大きいのは？",
+    "choices": ["フッ化タングステン(Ⅵ)WF6", "純チタン"],
+    "correctIndex": 0,
+    "explanation": "フッ化タングステン(Ⅵ)の密度は4.56g/cm^3で、純チタンは4.51g/cm^3です。"
+  },
+  {
+    "id": 39,
+    "question": "東山線の電車にパンタグラフは？",
+    "choices": ["ついている", "ついていない"],
+    "correctIndex": 1,
+    "explanation": "東山線には走行用のレールとは別に、並行して第三の給電用レールがあり、そこから電力供給を受けています。"
+  },
+  {
+    "id": 40,
+    "question": "全世界シェア　割合が大きいのは？",
+    "choices": ["iPhone", "Android"],
+    "correctIndex": 1,
+    "explanation": "2025年の調査によると、Androidのシェア率は72.72％で、iOSのシェア率は26.2%だそうです。"
+  },
+  {
+    "id": 41,
+    "question": "大学内にスターバックスがない大学　正しいのは？",
+    "choices": ["京都大学", "東京大学"],
+    "correctIndex": 0,
+    "explanation": "東京大学工学部店が存在します。京都大学にはスタバではなくタリーズコーヒー京都大学時計台店が存在します。"
+  },
+  {
+    "id": 42,
+    "question": "名古屋の区　存在しないものは？",
+    "choices": ["今池区", "天白区"],
+    "correctIndex": 0,
+    "explanation": "今池地区は千種区に属しています。"
+  },
+  {
+    "id": 43,
+    "question": "オリンピック景気の後の景気　正しいのは？",
+    "choices": ["いざなぎ景気", "いざなみ景気"],
+    "correctIndex": 0,
+    "explanation": "いざなみ景気は2000年代初頭の小泉政権下での構造改革や企業利益の拡大、IT・中国特需などにより、戦後最長の73ヶ月続いた景気回復局面です。"
+  },
+  {
+    "id": 44,
+    "question": "新名神高速道路の最高時速　正しいのは？",
+    "choices": ["120km/h", "100km/h"],
+    "correctIndex": 1,
+    "explanation": "設計最高速度は120km/hですが暫定速度は100km/hです。"
+  },
+  {
+    "id": 45,
+    "question": "名古屋駅　どっちが本数多い？",
+    "choices": ["東山線", "東海道線"],
+    "correctIndex": 0,
+    "explanation": "東海道線は1時間に13本(平日19時)なのに対し、東山線は1時間に29本(平日8時)です。"
+  },
+  {
+    "id": 46,
+    "question": "名古屋大学の正式な校歌は？",
+    "choices": ["存在する", "存在しない"],
+    "correctIndex": 1,
+    "explanation": "正式な校歌は存在しないが、学生歌として『若き我等』がある。"
+  },
+  {
+    "id": 47,
+    "question": "ウーロン茶　漢字で書くと？",
+    "choices": ["鳥龍茶", "烏龍茶"],
+    "correctIndex": 1,
+    "explanation": "『鳥』ではなく『烏』を用います。"
+  },
+  {
+    "id": 48,
+    "question": "希硫酸をつくる　正しいのは？",
+    "choices": ["水に濃硫酸を加える", "濃硫酸に水を加える"],
+    "correctIndex": 0,
+    "explanation": "濃硫酸に水を加えると、激しく反応し、突沸のリスクがあるので絶対にやってはいけません。"
+  },
+  {
+    "id": 49,
+    "question": "名古屋大に数英理科1科目で受験できる学科は？",
+    "choices": ["ある", "ない"],
+    "correctIndex": 0,
+    "explanation": "情報学部自然情報学科は理科は1科目選択で受験できます。"
+  },
+  {
+    "id": 50,
+    "question": "名古屋大学の総長は誰？",
+    "choices": ["松尾清一", "杉山直"],
+    "correctIndex": 1,
+    "explanation": "松尾清一は先代総長であり、現東海国立大学機構の機構長です。"
   }
 ]
