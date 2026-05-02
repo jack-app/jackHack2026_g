@@ -6,33 +6,68 @@ type Props = {
   onRestart: () => void;
 };
 
-export function ResultScreen({ score, total, onRestart }: Props) {
+import '../finish.css'
+import { finishCommentContent } from '../data/finishcomment'
+
+function CorrectCount({ correctcountscore = 0, correctcounttotal = 0} ) {
+    return (
+        <div className = 'correctcount'>
+            {correctcountscore} / {correctcounttotal} 問
+            <span className = 'correctcount-correct'>
+                正解
+            </span>
+            ！
+        </div>
+    )
+}
+
+function FinishComment({ finishcommentscore = 0 } ) {
+    const finishcomment = finishCommentContent.find(finishCommentContent =>
+        finishCommentContent.id === finishcommentscore
+    );
+
+    return (
+        <div className = 'finishcomment'>
+            <p>{ finishcomment?.comment }</p>
+            <img />
+        </div>
+    )
+}
+
+function FinishCommentImg() {
+    return (
+        <div className = 'finishcommentimg'>
+            <img src='' />
+        </div>
+    )
+}
+
+function BackToTitle({onRestart} : {onRestart: () => void}) {
+    return (
+        <div className = 'backtotitle'>
+            <button onClick={(onRestart)}>
+                タイトルにもどる
+            </button>
+        </div>
+    )
+}
+
+export function ResultScreen({score, total, onRestart} : Props) {
   return (
-    <VideoBackground
-      contentStyle={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '32px',
-      }}
-    >
-      <h1 style={{ margin: 0, fontSize: '48px' }}>結果画面</h1>
-      <p style={{ fontSize: '32px', margin: 0 }}>
-        {score} / {total} 問正解
-      </p>
-      <button
-        onClick={onRestart}
-        style={{
-          fontSize: '20px',
-          padding: '12px 36px',
-          cursor: 'pointer',
-          border: '2px solid black',
-          background: 'white',
-        }}
-      >
-        タイトルに戻る
-      </button>
-    </VideoBackground>
-  );
+    
+        <div className = 'result'>
+            <div className = 'result-top'>
+                結果
+            </div>
+            <CorrectCount
+                correctcountscore={score}
+                correctcounttotal={total}
+            />
+            <FinishComment
+                finishcommentscore={score}
+            />
+            <FinishCommentImg />
+            <BackToTitle onRestart={onRestart} />
+        </div>
+    )
 }
