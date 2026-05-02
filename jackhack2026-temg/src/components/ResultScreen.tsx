@@ -1,3 +1,5 @@
+import { VideoBackground } from './VideoBackground';
+
 type Props = {
   score: number;
   total: number;

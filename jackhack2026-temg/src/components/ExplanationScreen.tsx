@@ -1,3 +1,5 @@
+import { VideoBackground } from './VideoBackground';
+
 type Props = {
   explanation: string;
   onNext: () => void;
@@ -6,12 +8,10 @@ type Props = {
 
 export function ExplanationScreen({ explanation, onNext, isLast }: Props) {
   return (
-    <div
-      style={{
+    <VideoBackground
+      contentStyle={{
         display: 'flex',
         flexDirection: 'column',
-        height: '100vh',
-        background: 'white',
         padding: '24px',
         boxSizing: 'border-box',
         gap: '16px',
@@ -44,6 +44,6 @@ export function ExplanationScreen({ explanation, onNext, isLast }: Props) {
           {isLast ? '結果を見る ▶' : '次の問題へ ▶'}
         </button>
       </div>
-    </div>
+    </VideoBackground>
   );
 }

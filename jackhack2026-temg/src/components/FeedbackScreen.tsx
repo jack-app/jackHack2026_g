@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { VideoBackground } from './VideoBackground';
 
 type Props = {
   isCorrect: boolean;
@@ -15,14 +16,11 @@ export function FeedbackScreen({ isCorrect, onNext }: Props) {
   }, []);
 
   return (
-    <div
-      style={{
+    <VideoBackground
+      contentStyle={{
         display: 'flex',
-        height: '100vh',
-        background: 'white',
         alignItems: 'center',
         justifyContent: 'center',
-        boxSizing: 'border-box',
       }}
     >
       {/* フィードバックウィンドウ（後でpng素材に置き換え予定） */}
@@ -44,6 +42,6 @@ export function FeedbackScreen({ isCorrect, onNext }: Props) {
           {isCorrect ? '正解！' : '不正解…'}
         </p>
       </div>
-    </div>
+    </VideoBackground>
   );
 }

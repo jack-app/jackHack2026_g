@@ -1,17 +1,17 @@
+import { VideoBackground } from './VideoBackground';
+
 type Props = {
   onStart: () => void;
 };
 
 export function TitleScreen({ onStart }: Props) {
   return (
-    <div
-      style={{
+    <VideoBackground
+      contentStyle={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100vh',
-        background: 'white',
         gap: '32px',
       }}
     >
@@ -28,6 +28,6 @@ export function TitleScreen({ onStart }: Props) {
       >
         スタート
       </button>
-    </div>
+    </VideoBackground>
   );
 }
