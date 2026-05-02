@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import type { Phase, Question } from './types';
 import { shuffle } from './utils/shuffle';
+import { TitleScreen } from './components/TitleScreen';
 import { QuestionScreen } from './components/QuestionScreen';
 import { FeedbackScreen } from './components/FeedbackScreen';
 import { ExplanationScreen } from './components/ExplanationScreen';
+import { ResultScreen } from './components/ResultScreen';
 import questionsData from './data/questions.json';
 
 const allQuestions = questionsData as Question[];
@@ -49,27 +51,7 @@ export default function App() {
   };
 
   if (phase === 'title') {
-    return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: '100vh',
-          background: 'white',
-          gap: '32px',
-        }}
-      >
-        <h1 style={{ margin: 0, fontSize: '48px' }}>タイトル画面</h1>
-        <button
-          onClick={handleStart}
-          style={{ fontSize: '24px', padding: '16px 48px', cursor: 'pointer', border: '2px solid black', background: 'white' }}
-        >
-          スタート
-        </button>
-      </div>
-    );
+    return <TitleScreen onStart={handleStart} />;
   }
 
   if (phase === 'question') {
@@ -100,28 +82,11 @@ export default function App() {
 
   if (phase === 'result') {
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: '100vh',
-          background: 'white',
-          gap: '32px',
-        }}
-      >
-        <h1 style={{ margin: 0, fontSize: '48px' }}>結果画面</h1>
-        <p style={{ fontSize: '32px', margin: 0 }}>
-          {score} / {shuffledQuestions.length} 問正解
-        </p>
-        <button
-          onClick={handleRestart}
-          style={{ fontSize: '20px', padding: '12px 36px', cursor: 'pointer', border: '2px solid black', background: 'white' }}
-        >
-          タイトルに戻る
-        </button>
-      </div>
+      <ResultScreen
+        score={score}
+        total={shuffledQuestions.length}
+        onRestart={handleRestart}
+      />
     );
   }
 
