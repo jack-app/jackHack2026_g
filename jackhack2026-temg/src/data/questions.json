@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "question": "問題0",
+    "choices": ["正解0", "不正解0"],
+    "correctIndex": 0,
+    "explanation": "解説文0"
+  },
+  {
+    "id": 2,
+    "question": "問題1",
+    "choices": ["不正解1", "正解1"],
+    "correctIndex": 1,
+    "explanation": "解説文1"
+  },
+  {
+    "id": 3,
+    "question": "問題2",
+    "choices": ["正解2", "不正解2"],
+    "correctIndex": 0,
+    "explanation": "解説文2"
+  },
+  {
+    "id": 4,
+    "question": "問題3",
+    "choices": ["不正解3", "正解3"],
+    "correctIndex": 1,
+    "explanation": "解説文3"
+  },
+  {
+    "id": 5,
+    "question": "問題4",
+    "choices": ["正解4", "不正解4"],
+    "correctIndex": 0,
+    "explanation": "解説文4"
+  }
+]
