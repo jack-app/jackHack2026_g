@@ -3,7 +3,7 @@ const correctcount = 0
 function CorrectCount() {
     return (
         <div className = 'correctcount'>
-            { correctcount } 問
+            { correctcount } 問 
             <span className = 'correctcount-correct'>
                 正解
             </span>
