@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { useTimer } from '../hooks/useTimer';
 import { TimerBar } from './TimerBar';
+import { VideoBackground } from './VideoBackground';
 import type { Question } from '../types';
 
 const MAX_TIME = 10;
@@ -14,7 +15,6 @@ type Props = {
 
 export function QuestionScreen({ question, questionNumber, totalQuestions, onAnswer }: Props) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  // タイマー終了時にstateの最新値を参照するためのref
   const selectedIndexRef = useRef<number | null>(null);
 
   const handleSelect = (index: number) => {
@@ -22,7 +22,6 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
     selectedIndexRef.current = index;
   };
 
-  // タイマーが0になった時点でselectedIndexRefの値を最終回答として送る
   const handleExpire = () => {
     onAnswer(selectedIndexRef.current);
   };
@@ -30,12 +29,10 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
   const timeLeft = useTimer(MAX_TIME, handleExpire);
 
   return (
-    <div
-      style={{
+    <VideoBackground
+      contentStyle={{
         display: 'flex',
         flexDirection: 'column',
-        height: '100vh',
-        background: 'white',
         padding: '24px',
         boxSizing: 'border-box',
         gap: '16px',
@@ -91,6 +88,6 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
           </button>
         ))}
       </div>
-    </div>
+    </VideoBackground>
   );
 }

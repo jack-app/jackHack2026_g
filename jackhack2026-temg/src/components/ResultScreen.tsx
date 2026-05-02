@@ -1,3 +1,5 @@
+import { VideoBackground } from './VideoBackground';
+
 type Props = {
   score: number;
   total: number;
@@ -6,14 +8,12 @@ type Props = {
 
 export function ResultScreen({ score, total, onRestart }: Props) {
   return (
-    <div
-      style={{
+    <VideoBackground
+      contentStyle={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100vh',
-        background: 'white',
         gap: '32px',
       }}
     >
@@ -33,6 +33,6 @@ export function ResultScreen({ score, total, onRestart }: Props) {
       >
         タイトルに戻る
       </button>
-    </div>
+    </VideoBackground>
   );
 }
