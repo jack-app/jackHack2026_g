@@ -18,7 +18,8 @@ export default function App() {
   const [isCorrect, setIsCorrect] = useState(false);
 
   const handleStart = () => {
-    setShuffledQuestions(shuffle(allQuestions));
+    const selectedQuestions = shuffle(allQuestions).slice(0,5);
+    setShuffledQuestions(selectedQuestions);
     setCurrentIndex(0);
     setScore(0);
     setPhase('question');
