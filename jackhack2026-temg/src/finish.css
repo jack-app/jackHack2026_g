@@ -159,3 +159,9 @@
         }
     }
 }
+
+.backtotitle button {
+    font-family: serif;
+    color: #daa520;
+    font-weight: 500;
+}
