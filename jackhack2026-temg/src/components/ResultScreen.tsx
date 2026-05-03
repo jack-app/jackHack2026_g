@@ -1,4 +1,5 @@
 import { VideoBackground } from './VideoBackground';
+import backImage from '../assets/taitorunimodoru.png'
 
 type Props = {
   score: number;
@@ -45,8 +46,23 @@ function FinishCommentImg() {
 function BackToTitle({onRestart} : {onRestart: () => void}) {
     return (
         <div className = 'backtotitle'>
-            <button onClick={(onRestart)}>
-                タイトルにもどる
+            <button onClick={(onRestart)}
+                style={{
+                    border: 'none',
+                    background: 'transparent',
+                    padding: 0,
+                    cursor: 'pointer',
+                }}
+                >
+                <img
+                src={backImage}
+                alt="タイトルに戻る"
+                style={{
+                  width: 'min(60vw,500px)',
+                  height: 'auto',
+                  display: 'block',
+            }}
+                  />
             </button>
         </div>
     )

@@ -1,4 +1,5 @@
 import { VideoBackground } from './VideoBackground';
+import startImage from '../assets/start.png';
 
 type Props = {
   onStart: () => void;
@@ -19,14 +20,20 @@ export function TitleScreen({ onStart }: Props) {
       <button
         onClick={onStart}
         style={{
-          fontSize: '24px',
-          padding: '16px 48px',
+          border: 'none',
+          background: 'transparent',
+          padding: 0,
           cursor: 'pointer',
-          border: '2px solid black',
-          background: 'white',
         }}
       >
-        スタート
+        <img src={startImage}
+        alt='スタート'
+        style={{
+          width: `min(60vw,500px)`,
+          height: 'auto',
+          display: 'block',
+        }}
+        />
       </button>
     </VideoBackground>
   );
