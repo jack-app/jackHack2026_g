@@ -1,43 +1,42 @@
 @media screen and (min-width: 800px) {
+  .explanation-board {
+    flex: 1;
+    margin: 48px auto;
+    padding: 24px;
+    padding-top: 75px;
+    box-sizing: border-box;
+    background-image: url(../src/assets/kaisetu.png);
+    background-size: 110%;
+    background-position: center;
+    max-width: 800px;
+    height: 70%;
+    aspect-ratio: 409 / 247;
 
-    .explanation-board {
-        flex: 1;
-        margin: 48px auto;
-        padding: 24px;
-        padding-top: 120px;
-        box-sizing: border-box;
-        background-image: url(../src/assets/kaisetu.png);
-        background-size: cover;
-        max-width: 800px;
-        height: 70%;
-        aspect-ratio: 409 / 247;
-
-        & p {
-            font-size: 40px;
-            line-height: 48px;
-            font-weight: 600;
-        }
+    & p {
+      font-size: 36px;
+      line-height: 48px;
+      font-weight: 600;
     }
+  }
 }
 
 @media screen and (max-width: 800px) {
+  .explanation-board {
+    flex: 1;
+    margin: 48px auto;
+    padding: 20px;
+    padding-top: 40px;
+    box-sizing: border-box;
+    background-image: url(../src/assets/kaisetu-sp.png);
+    background-size: cover;
+    aspect-ratio: 119 / 180;
+    height: 80%;
+    max-width: 300px;
 
-    .explanation-board {
-        flex: 1;
-        margin: 48px auto;
-        padding: 20px;
-        padding-top: 40px;
-        box-sizing: border-box;
-        background-image: url(../src/assets/tu-sp.png);
-        background-size: cover;
-        aspect-ratio: 119 / 180;
-        height: 80%;
-        max-width: 250px;
-
-        & p {
-            font-size: 24px;
-            line-height: 32px;
-            font-weight: 600;
-        }
+    & p {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
     }
+  }
 }
