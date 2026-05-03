@@ -1,4 +1,6 @@
 import { VideoBackground } from './VideoBackground';
+import nextImage from '../assets/tuginomonndai.png';
+
 
 import '../explanation.css'
 
@@ -28,13 +30,21 @@ export function ExplanationScreen({ explanation, onNext, isLast }: Props) {
         <button
           onClick={onNext}
           style={{
-            fontSize: '22px',
-            padding: '12px 28px',
-            cursor: 'pointer',
-            backgroundColor: 'white',
+            border: 'none',
+            background: 'transparent',
+            padding: 0,
+            cursor: 'pointer'
           }}
         >
-          {isLast ? '結果を見る ▶' : '次の問題へ ▶'}
+          <img
+          src={nextImage}
+          alt={isLast ? '結果を見る ▶' : '次の問題へ ▶'}
+          style={{
+            width: 'min(40vw,350px)',
+            height: 'auto',
+            display: 'inline-block',
+          }}
+          />
         </button>
       </div>
     </VideoBackground>
