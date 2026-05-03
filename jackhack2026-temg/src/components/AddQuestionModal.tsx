@@ -72,7 +72,7 @@ export function AddQuestionModal({ isOpen, onClose, onSubmit }: Props) {
     >
       <div
         style={{
-          backgroundColor: "white",
+          backgroundColor: "#FFC850",
           padding: "32px",
           borderRadius: "8px",
           maxWidth: "600px",
@@ -108,7 +108,12 @@ export function AddQuestionModal({ isOpen, onClose, onSubmit }: Props) {
           />
         </div>
 
-        <div style={{ marginBottom: "16px" }}>
+        <div style={{ 
+          marginBottom: "16px",
+          marginRight: '20px',
+          display: 'inline-block',
+          width: 'calc(50% - 10px)',
+         }}>
           <label
             style={{
               display: "block",
@@ -132,7 +137,11 @@ export function AddQuestionModal({ isOpen, onClose, onSubmit }: Props) {
           />
         </div>
 
-        <div style={{ marginBottom: "16px" }}>
+        <div style={{ 
+          marginBottom: "16px",
+          display: 'inline-block',
+          width: 'calc(50% - 10px)',
+        }}>
           <label
             style={{
               display: "block",
@@ -239,7 +248,7 @@ export function AddQuestionModal({ isOpen, onClose, onSubmit }: Props) {
               backgroundColor: "#4CAF50",
               color: "white",
               border: "none",
-              borderRadius: "4px",
+              borderRadius: "10px",
               cursor: "pointer",
             }}
           >
@@ -254,7 +263,7 @@ export function AddQuestionModal({ isOpen, onClose, onSubmit }: Props) {
               backgroundColor: "#999",
               color: "white",
               border: "none",
-              borderRadius: "4px",
+              borderRadius: "10px",
               cursor: "pointer",
             }}
           >
