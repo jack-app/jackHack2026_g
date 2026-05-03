@@ -1,11 +1,14 @@
+import "../finish.css";
+import { finishCommentContent } from "../data/finishcomment";
+// import { VideoBackground } from "./VideoBackground";
+import backImage from "../assets/taitorunimodoru.png";
+
 type Props = {
   score: number;
   total: number;
   onRestart: () => void;
+  onAddQuestion: () => void;
 };
-
-import "../finish.css";
-import { finishCommentContent } from "../data/finishcomment";
 
 function CorrectCount({ correctcountscore = 0, correctcounttotal = 0 }) {
   return (
@@ -40,8 +43,24 @@ function FinishCommentImg() {
 function BackToTitle({ onRestart }: { onRestart: () => void }) {
   return (
     <div className="backtotitle">
-      <button onClick={onRestart}>
-        <img src="../src/assets/backtotitle.png" />
+      <button
+        onClick={onRestart}
+        style={{
+          border: "none",
+          background: "transparent",
+          padding: 0,
+          cursor: "pointer",
+        }}
+      >
+        <img
+          src="../src/assets/backtotitle.png"
+          alt="タイトルに戻る"
+          style={{
+            width: "min(60vw,500px)",
+            height: "auto",
+            display: "block",
+          }}
+        />
       </button>
     </div>
   );
