@@ -2,6 +2,9 @@ import { useEffect, useRef } from 'react';
 import { VideoBackground } from './VideoBackground';
 import seikaiImage from '../assets/seikai.png';
 import fuseikaiImage from '../assets/fuseikai.png'
+import seikaiSound from '../assets/sounds/seikai.mp3';
+import fuseikaiSound from '../assets/sounds/fuseikai.mp3';
+
 
 
 
@@ -15,9 +18,18 @@ export function FeedbackScreen({ isCorrect, onNext }: Props) {
   onNextRef.current = onNext;
 
   useEffect(() => {
+    const audio = new Audio(isCorrect ? seikaiSound : fuseikaiSound);
+    audio.volume = 0.8;
+    audio.play();
+
     const id = setTimeout(() => onNextRef.current(), 2000);
-    return () => clearTimeout(id);
-  }, []);
+
+    return () => {
+      clearTimeout(id);
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, [isCorrect]);
 
   return (
     <VideoBackground

@@ -1,6 +1,8 @@
 import { VideoBackground } from './VideoBackground';
 import nextImage from '../assets/tuginomonndai.png';
 import resultImage from '../assets/kekka.png';
+import { useEffect } from 'react';
+import kaisetuSound from '../assets/sounds/kaisetu.mp3';
 
 
 import '../explanation.css'
@@ -12,6 +14,17 @@ type Props = {
 };
 
 export function ExplanationScreen({ explanation, onNext, isLast }: Props) {
+  useEffect(() => {
+    const audio = new Audio(kaisetuSound);
+    audio.volume = 0.7;
+    audio.play();
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
+
   return (
     <VideoBackground
       contentStyle={{
@@ -21,6 +34,7 @@ export function ExplanationScreen({ explanation, onNext, isLast }: Props) {
         boxSizing: 'border-box',
         gap: '16px',
       }}
+      
     >
 
       <div className='explanation-board'>
