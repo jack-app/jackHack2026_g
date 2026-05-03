@@ -85,11 +85,11 @@ export function TitleScreen({
             fontSize: "16px",
             padding: "12px 32px",
             cursor: "pointer",
-            border: "2px solid black",
-            background: "lightblue",
+            border: "transparent",
+            background: "transparent",
           }}
         >
-          問題を追加
+          <img src= "src/assets/mondaitouroku.png" width='200' height= '120'/>
         </button>
         <button
           onClick={onViewQuestions}
@@ -97,11 +97,11 @@ export function TitleScreen({
             fontSize: "16px",
             padding: "12px 32px",
             cursor: "pointer",
-            border: "2px solid black",
-            background: "lightgreen",
+            border: "transparent",
+            background: "transparent",
           }}
         >
-          問題一覧
+          <img src= "src/assets/mondaiitiran.png" width='180' height= '120'/>
         </button>
       </div>
     </VideoBackground>

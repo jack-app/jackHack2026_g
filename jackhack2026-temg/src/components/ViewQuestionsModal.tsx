@@ -13,7 +13,7 @@ export function ViewQuestionsModal({ isOpen, onClose, onDelete }: Props) {
   const userQuestions = loadUserQuestions();
 
   const handleDelete = (id: number) => {
-    if (confirm("この問題を削除しますか？")) {
+    if (confirm("この削除しますか？")) {
       deleteUserQuestion(id);
       onDelete?.();
     }
