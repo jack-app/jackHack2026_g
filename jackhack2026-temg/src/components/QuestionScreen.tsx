@@ -43,12 +43,12 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         <TimerBar timeLeft={timeLeft} maxTime={MAX_TIME} />
-        <span style={{ whiteSpace: 'nowrap', fontSize: '18px', fontWeight: 'bold' }}>
+        <span style={{ whiteSpace: 'nowrap', fontSize: '24px', fontWeight: 'bold' ,color: '#E8B94A'}}>
           {timeLeft.toFixed(1)}秒
         </span>
       </div>
 
-      <div style={{ fontSize: '32px', color: '#6b7280' }}>
+      <div style={{ fontSize: '54px', color: '#E8B94A' }}>
         {questionNumber} / {totalQuestions} 問
       </div>
 
