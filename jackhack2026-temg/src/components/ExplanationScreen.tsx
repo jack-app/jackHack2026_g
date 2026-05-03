@@ -1,5 +1,6 @@
 import { VideoBackground } from './VideoBackground';
 import nextImage from '../assets/tuginomonndai.png';
+import resultImage from '../assets/kekka.png';
 
 
 import '../explanation.css'
@@ -37,7 +38,7 @@ export function ExplanationScreen({ explanation, onNext, isLast }: Props) {
           }}
         >
           <img
-          src={nextImage}
+          src={isLast ? resultImage : nextImage}
           alt={isLast ? '結果を見る ▶' : '次の問題へ ▶'}
           style={{
             width: 'min(40vw,350px)',

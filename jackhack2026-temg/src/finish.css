@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.65);
     position: relative;
     overflow: hidden;
 }
@@ -41,13 +41,13 @@
     .finishcomment {
         width: calc(100% - 280px);
         height: 100px;
-        top: 280px;
+        top: 45%;
         left: 10px;
         padding: 16px;
         font-size: 32px;
         line-height: 32px;
         border-radius: 50%;
-        border: solid 1px #0a2933;
+        background-color: #fff;
         position: absolute;
         display: flex;
 
@@ -57,16 +57,20 @@
     }
 
     .finishcommentimg {
-        width: 132px;
-        height: 132px;
-        top: 280px;
+        width: 180px;
+        height: 180px;
+        top: calc(45% - 20px);
         right: 20px;
         background-color: #c0c0c0;
         border-radius: 50%;
         position: absolute;
+        text-align: center;
 
         & img {
-         width: 100px;
+            width: 136px;
+            display: inline-block;
+            -webkit-transform: translateY(24px);
+            transform: translateY(24px);
         }
     }
 
@@ -74,33 +78,41 @@
         width: 100%;
         margin: 0;
         text-align: center;
-        bottom: 100px;
+        bottom: 40px;
         position: absolute;
     
         & button {
-            background-color: #fff;
-            width: 300px;
-            padding: 10px;
-            font-size: 32px;
-            line-height: 40px;
+            border: none;
+            background: none;
             display: inline-block;
+            text-align: center;
 
-            &:hover {
-                background-color: #eaeaea;
+            & img {
+                width: 350px;
             }
         }
+    }
+
+    .fukidashi {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        height: 60px;
+        width: 120px;
+        clip-path: polygon(50% 50%, 100% 100%, 0 70%);
     }
 }
 
 @media screen and (max-width: 500px) {
 
     .correctcount {
-        width: 100%;
+        width: calc(100% - 40px);
         top: 100px;
-        margin: 0;
+        margin: 0 20px;
         text-align: center;
         line-height: 64px;
-        font-size: 64px;
+        font-size: 56px;
         font-weight: 400;
         position: absolute;
     }
@@ -112,10 +124,10 @@
         top: 250px;
         left: 10px;
         padding: 16px;
-        font-size: 28px;
-        line-height: 28px;
+        font-size: 24px;
+        line-height: 24px;
         border-radius: 50%;
-        border: solid 1px #0a2933;
+        background-color: #fff;
         position: absolute;
         display: flex;
 
@@ -132,9 +144,13 @@
         background-color: #c0c0c0;
         border-radius: 50%;
         position: absolute;
+        text-align: center;
 
         & img {
-         width: 80px;
+            width: 80px;
+            display: inline-block;
+            -webkit-transform: translateY(10px);
+            transform: translateY(10px);
         }
     }
 
@@ -146,22 +162,24 @@
         position: absolute;
     
         & button {
-            background-color: #fff;
-            width: 260px;
-            padding: 10px;
-            font-size: 24px;
-            line-height: 32px;
+            border: none;
+            background: none;
             display: inline-block;
+            text-align: center;
 
-            &:hover {
-                background-color: #eaeaea;
+            & img {
+                width: 200px;
             }
         }
     }
-}
 
-.backtotitle button {
-    font-family: serif;
-    color: #daa520;
-    font-weight: 500;
+    .fukidashi {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        height: 60px;
+        width: 120px;
+        clip-path: polygon(60% 70%, 60% 100%, 98% 20%);
+    }
 }
