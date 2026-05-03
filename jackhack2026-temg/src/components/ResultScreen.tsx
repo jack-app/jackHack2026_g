@@ -1,5 +1,3 @@
-import { VideoBackground } from './VideoBackground';
-
 type Props = {
   score: number;
   total: number;
@@ -29,7 +27,7 @@ function FinishComment({ finishcommentscore = 0 } ) {
     return (
         <div className = 'finishcomment'>
             <p>{ finishcomment?.comment }</p>
-            <img />
+            <div className='fukidashi' />
         </div>
     )
 }
@@ -37,7 +35,7 @@ function FinishComment({ finishcommentscore = 0 } ) {
 function FinishCommentImg() {
     return (
         <div className = 'finishcommentimg'>
-            <img src='' />
+            <img src='../src/assets/finish-minecart.png' />
         </div>
     )
 }
@@ -46,28 +44,35 @@ function BackToTitle({onRestart} : {onRestart: () => void}) {
     return (
         <div className = 'backtotitle'>
             <button onClick={(onRestart)}>
-                タイトルにもどる
+                <img src='../src/assets/backtotitle.png' />
             </button>
         </div>
     )
 }
 
 export function ResultScreen({score, total, onRestart} : Props) {
-  return (
-    
-        <div className = 'result'>
-            <div className = 'result-top'>
-                結果
+    return (
+        <div
+            style={{
+                backgroundImage: 'URL(../src/assets/finish.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}
+        >
+            <div className = 'result'>
+                <div className = 'result-top'>
+                    結果
+                </div>
+                <CorrectCount
+                    correctcountscore={score}
+                    correctcounttotal={total}
+                />
+                <FinishComment
+                    finishcommentscore={score}
+                />
+                <FinishCommentImg />
+                <BackToTitle onRestart={onRestart} />
             </div>
-            <CorrectCount
-                correctcountscore={score}
-                correctcounttotal={total}
-            />
-            <FinishComment
-                finishcommentscore={score}
-            />
-            <FinishCommentImg />
-            <BackToTitle onRestart={onRestart} />
         </div>
     )
 }
