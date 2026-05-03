@@ -98,6 +98,9 @@ export function QuestionScreen({
           backgroundSize: `contain`,
           backgroundPosition: `center`,
           backgroundRepeat: `no-repeat`,
+          maxWidth: "80%",
+          wordWrap: "break-word",
+          margin: "0 auto",
         }}
       >
         <p
