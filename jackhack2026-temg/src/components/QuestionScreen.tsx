@@ -5,7 +5,8 @@ import { VideoBackground } from './VideoBackground';
 import type { Question } from '../types';
 import mondaiImage from '../assets/mondai.png';
 import sentakusiImage from '../assets/sentakusi.png';
-
+import { useEffect } from 'react';
+import syutudaiSound from '../assets/sounds/syutudai.mp3';
 
 
 const MAX_TIME = 10;
@@ -18,9 +19,21 @@ type Props = {
   onAnswer: (index: number | null) => void;
 };
 
+
 export function QuestionScreen({ question, questionNumber, totalQuestions, onAnswer }: Props) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const selectedIndexRef = useRef<number | null>(null);
+
+  useEffect(() => {
+  const audio = new Audio(syutudaiSound);
+  audio.volume = 0.7;
+  audio.play();
+
+  return () => {
+    audio.pause();
+    audio.currentTime = 0;
+  };
+}, [questionNumber]);
 
   const handleSelect = (index: number) => {
     setSelectedIndex(index);
