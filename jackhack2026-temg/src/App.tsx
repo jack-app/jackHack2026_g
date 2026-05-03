@@ -10,6 +10,8 @@ import { ResultScreen } from "./components/ResultScreen";
 import { AddQuestionModal } from "./components/AddQuestionModal";
 import { ViewQuestionsModal } from "./components/ViewQuestionsModal";
 import questionsData from "./data/questions.json";
+import { useEffect, useRef } from 'react';
+import bgmSound from './assets/sounds/BGM.mp3';
 
 const defaultQuestions = questionsData as Question[];
 
@@ -30,26 +32,28 @@ export default function App() {
   const [showViewQuestionsModal, setShowViewQuestionsModal] = useState(false);
 
   const handleStart = () => {
-    let questionsToUse: Question[];
+  let questionsToUse: Question[];
 
-    if (questionMode === "default") {
-      questionsToUse = defaultQuestions;
-    } else {
-      const userQuestions = loadUserQuestions();
-      questionsToUse = userQuestions;
-    }
+  if (questionMode === "default") {
+    questionsToUse = defaultQuestions;
+  } else {
+    const userQuestions = loadUserQuestions();
+    questionsToUse = userQuestions;
+  }
 
-    if (questionsToUse.length === 0) {
-      alert("問題が見つかりません。追加してください。");
-      return;
-    }
+  if (questionsToUse.length === 0) {
+    alert("問題が見つかりません。追加してください。");
+    return;
+  }
 
-    const selectedQuestions = shuffle(questionsToUse).slice(0, 5);
-    setShuffledQuestions(selectedQuestions);
-    setCurrentIndex(0);
-    setScore(0);
-    setPhase("question");
-  };
+  playBgm();
+
+  const selectedQuestions = shuffle(questionsToUse).slice(0, 5);
+  setShuffledQuestions(selectedQuestions);
+  setCurrentIndex(0);
+  setScore(0);
+  setPhase("question");
+};
 
   const handleAnswer = (index: number | null) => {
     const q = shuffledQuestions[currentIndex];
@@ -64,16 +68,19 @@ export default function App() {
   };
 
   const handleNext = () => {
-    const nextIndex = currentIndex + 1;
-    if (nextIndex >= shuffledQuestions.length) {
-      setPhase("result");
-    } else {
-      setCurrentIndex(nextIndex);
-      setPhase("question");
-    }
-  };
+  const nextIndex = currentIndex + 1;
+
+  if (nextIndex >= shuffledQuestions.length) {
+    stopBgm();
+    setPhase("result");
+  } else {
+    setCurrentIndex(nextIndex);
+    setPhase("question");
+  }
+};
 
   const handleRestart = () => {
+    playBgm();
     setPhase("title");
   };
 
@@ -96,6 +103,39 @@ export default function App() {
     const newQuestion = saveUserQuestion(question);
     setAllQuestions([...allQuestions, newQuestion]);
   };
+  const bgmRef = useRef<HTMLAudioElement | null>(null);
+
+useEffect(() => {
+  const bgm = new Audio(bgmSound);
+  bgm.loop = true;
+  bgm.volume = 0.4;
+
+  bgmRef.current = bgm;
+
+  return () => {
+    bgm.pause();
+    bgm.currentTime = 0;
+  };
+}, []);
+
+const playBgm = () => {
+  const bgm = bgmRef.current;
+  if (!bgm) return;
+
+  bgm.currentTime = 0;
+
+  bgm.play().catch((error) => {
+    console.log("BGMの再生に失敗しました:", error);
+  });
+};
+
+const stopBgm = () => {
+  const bgm = bgmRef.current;
+  if (!bgm) return;
+
+  bgm.pause();
+  bgm.currentTime = 0;
+};
 
   if (phase === "title") {
     return (
