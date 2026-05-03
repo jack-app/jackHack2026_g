@@ -40,7 +40,7 @@ export default function App() {
     }
 
     if (questionsToUse.length === 0) {
-      alert("問題が見つかりません。問題を追加してください。");
+      alert("問題が見つかりません。追加してください。");
       return;
     }
 

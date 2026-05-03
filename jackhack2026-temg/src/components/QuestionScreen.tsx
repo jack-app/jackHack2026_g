@@ -83,7 +83,7 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
             style={{
               flex: 1,
               border: `none`,
-              backgroundColor: selectedIndex === i ? `#93c5fd` : 'transparent',
+              backgroundColor: selectedIndex === i ? `#FFD700` : 'transparent',
               backgroundImage: `url(${sentakusiImage})`,
               backgroundSize: '100% 100%',
               backgroundPosition: 'center',
@@ -94,7 +94,7 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
               letterSpacing: '0.04em',
               cursor: 'pointer',
               boxSizing: 'border-box',
-              outline: selectedIndex === i ? '3px solid #1d4ed8' : 'none',
+              outline: selectedIndex === i ? '3px solid #ffbb00' : 'none',
               outlineOffset: '-4px',
             }}
           >
