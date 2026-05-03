@@ -7,7 +7,9 @@ import mondaiImage from '../assets/mondai.png';
 import sentakusiImage from '../assets/sentakusi.png';
 
 
+
 const MAX_TIME = 10;
+const isSmall = window.innerWidth <= 500;
 
 type Props = {
   question: Question;
@@ -67,8 +69,9 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
           backgroundPosition: `center`,
           backgroundRepeat: `no-repeat`,
         }}
-      >
-        <p style={{ fontSize: '60px', textAlign: 'center', margin: 0, lineHeight: 1.6 }}>
+      > 
+        <p style={{ fontSize: isSmall ? '30px':'60px',
+          textAlign: 'center', margin: 0, lineHeight: 1.6 }}>
           {question.question}
         </p>
        
