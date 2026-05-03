@@ -1,40 +1,92 @@
-import { VideoBackground } from './VideoBackground';
-import startImage from '../assets/start.png';
+import { VideoBackground } from "./VideoBackground";
+import { QuestionModeSelector } from "./QuestionModeSelector";
+import startImage from "../assets/start.png";
 
 type Props = {
   onStart: () => void;
+  onAddQuestion: () => void;
+  onViewQuestions: () => void;
+  questionMode: "default" | "user";
+  onQuestionModeChange: (mode: "default" | "user") => void;
 };
 
-export function TitleScreen({ onStart }: Props) {
+export function TitleScreen({
+  onStart,
+  onAddQuestion,
+  onViewQuestions,
+  questionMode,
+  onQuestionModeChange,
+}: Props) {
   return (
     <VideoBackground
       contentStyle={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '32px',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "32px",
       }}
     >
-      <h1 style={{ margin: 0, fontSize: '48px' }}>タイトル画面</h1>
-      <button
-        onClick={onStart}
+      <h1 style={{ margin: 0, fontSize: "48px" }}>タイトル画面</h1>
+
+      <QuestionModeSelector
+        mode={questionMode}
+        onModeChange={onQuestionModeChange}
+      />
+
+      <div
         style={{
-          border: 'none',
-          background: 'transparent',
-          padding: 0,
-          cursor: 'pointer',
+          display: "flex",
+          gap: "16px",
+          flexWrap: "wrap",
+          justifyContent: "center",
         }}
       >
-        <img src={startImage}
-        alt='スタート'
-        style={{
-          width: `min(60vw,500px)`,
-          height: 'auto',
-          display: 'block',
-        }}
-        />
-      </button>
+        <button
+          onClick={onStart}
+          style={{
+            fontSize: "24px",
+            padding: "16px 48px",
+            cursor: "pointer",
+            border: "transparent",
+            background: "transparent",
+          }}
+        >
+          <img
+            src={startImage}
+            alt="スタート"
+            style={{
+              width: `min(60vw,500px)`,
+              height: "auto",
+              display: "block",
+            }}
+          />
+        </button>
+        <button
+          onClick={onAddQuestion}
+          style={{
+            fontSize: "16px",
+            padding: "12px 32px",
+            cursor: "pointer",
+            border: "2px solid black",
+            background: "lightblue",
+          }}
+        >
+          問題を追加
+        </button>
+        <button
+          onClick={onViewQuestions}
+          style={{
+            fontSize: "16px",
+            padding: "12px 32px",
+            cursor: "pointer",
+            border: "2px solid black",
+            background: "lightgreen",
+          }}
+        >
+          問題一覧
+        </button>
+      </div>
     </VideoBackground>
   );
 }
