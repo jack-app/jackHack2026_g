@@ -16,24 +16,17 @@ export function TitleScreen({ onStart }: Props) {
         gap: '32px',
       }}
     >
-      <h1 style={{ margin: 0, fontSize: '48px' }}>タイトル画面</h1>
+      <h1 style={{ margin: 0, fontSize: '48px' }}><img src= 'src/assets/titlelogo.png' width='663' height='377'/></h1>
       <button
         onClick={onStart}
         style={{
-          border: 'none',
-          background: 'transparent',
           padding: 0,
           cursor: 'pointer',
+          border: 'transparent',
+          background: 'transparent',
         }}
       >
-        <img src={startImage}
-        alt='スタート'
-        style={{
-          width: `min(60vw,500px)`,
-          height: 'auto',
-          display: 'block',
-        }}
-        />
+        <img src='src/assets/start.button.png' width='400' height= '110'/>
       </button>
     </VideoBackground>
   );
