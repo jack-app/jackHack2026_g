@@ -38,7 +38,7 @@ export function ViewQuestionsModal({ isOpen, onClose, onDelete }: Props) {
     >
       <div
         style={{
-          backgroundColor: "white",
+          backgroundColor: "#FFC850",
           padding: "32px",
           borderRadius: "8px",
           maxWidth: "800px",
@@ -81,7 +81,7 @@ export function ViewQuestionsModal({ isOpen, onClose, onDelete }: Props) {
                         display: "inline-block",
                         padding: "8px 12px",
                         marginRight: "8px",
-                        backgroundColor: "#e0e0e0",
+                        backgroundColor: "#FF4050",
                         borderRadius: "4px",
                       }}
                     >
@@ -99,7 +99,7 @@ export function ViewQuestionsModal({ isOpen, onClose, onDelete }: Props) {
                         display: "inline-block",
                         padding: "8px 12px",
                         marginRight: "8px",
-                        backgroundColor: "#e0e0e0",
+                        backgroundColor: "#888888",
                         borderRadius: "4px",
                       }}
                     >
