@@ -1,7 +1,28 @@
+@font-face {
+  font-family: 'NotoSansJP';
+  src: url('./assets/fonts/NotoSansJP-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
 html,
 body,
 #root {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'NotoSansJP',sans-serif;
+font-weight: 800;}
+
+*{
+  font-family : 'NotoSansJP', sans-serif !important;
+  font-weight: 800;
+}
+
+button,
+input,
+textarea,
+select{
+  font-family: 'NotoSansJP', sans-serif !important;
+  font-weight: 800;
 }

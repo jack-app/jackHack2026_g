@@ -3,6 +3,9 @@ import { useTimer } from '../hooks/useTimer';
 import { TimerBar } from './TimerBar';
 import { VideoBackground } from './VideoBackground';
 import type { Question } from '../types';
+import mondaiImage from '../assets/mondai.png';
+import sentakusiImage from '../assets/sentakusi.png';
+
 
 const MAX_TIME = 10;
 
@@ -45,7 +48,7 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
         </span>
       </div>
 
-      <div style={{ fontSize: '14px', color: '#6b7280' }}>
+      <div style={{ fontSize: '32px', color: '#6b7280' }}>
         {questionNumber} / {totalQuestions} 問
       </div>
 
@@ -53,15 +56,19 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
       <div
         style={{
           flex: 1,
-          border: '2px solid black',
+          border: 'none',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           padding: '32px',
           boxSizing: 'border-box',
+          backgroundImage: `url(${mondaiImage})`,
+          backgroundSize: `contain`,
+          backgroundPosition: `center`,
+          backgroundRepeat: `no-repeat`,
         }}
       >
-        <p style={{ fontSize: '28px', textAlign: 'center', margin: 0, lineHeight: 1.6 }}>
+        <p style={{ fontSize: '80px', textAlign: 'center', margin: 0, lineHeight: 1.6 }}>
           {question.question}
         </p>
       </div>
@@ -74,10 +81,16 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
             onClick={() => handleSelect(i)}
             style={{
               flex: 1,
-              border: '2px solid black',
-              background: selectedIndex === i ? '#93c5fd' : 'white',
-              fontSize: '22px',
-              fontWeight: 'bold',
+              border: `none`,
+              backgroundColor: selectedIndex === i ? `#93c5fd` : 'transparent',
+              backgroundImage: `url(${sentakusiImage})`,
+              backgroundSize: '100% 100%',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              fontSize: '48px',
+              fontWeight: 900,
+              WebkitTextStroke:'0.6px black',
+              letterSpacing: '0.04em',
               cursor: 'pointer',
               boxSizing: 'border-box',
               outline: selectedIndex === i ? '3px solid #1d4ed8' : 'none',

@@ -26,7 +26,7 @@ export function FeedbackScreen({ isCorrect, onNext }: Props) {
       {/* フィードバックウィンドウ（後でpng素材に置き換え予定） */}
       <div
         style={{
-          border: '2px solid black',
+          border: 'none',
           padding: '64px 96px',
           textAlign: 'center',
         }}
