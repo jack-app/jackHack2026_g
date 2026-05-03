@@ -68,7 +68,7 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
           backgroundRepeat: `no-repeat`,
         }}
       >
-        <p style={{ fontSize: '80px', textAlign: 'center', margin: 0, lineHeight: 1.6 }}>
+        <p style={{ fontSize: '60px', textAlign: 'center', margin: 0, lineHeight: 1.6 }}>
           {question.question}
         </p>
        
