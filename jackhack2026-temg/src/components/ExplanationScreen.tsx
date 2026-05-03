@@ -1,5 +1,7 @@
 import { VideoBackground } from './VideoBackground';
 
+import '../explanation.css'
+
 type Props = {
   explanation: string;
   onNext: () => void;
@@ -17,31 +19,19 @@ export function ExplanationScreen({ explanation, onNext, isLast }: Props) {
         gap: '16px',
       }}
     >
-      {/* 解説ウィンドウ（後でpng素材に置き換え予定） */}
-      <div
-        style={{
-          flex: 1,
-          margin: '48px auto',
-          padding: '32px',
-          paddingTop: '128px',
-          boxSizing: 'border-box',
-          backgroundImage: 'url(../src/assets/kaisetu.png)',
-          backgroundSize: 'cover',
-          maxWidth: '900px',
-          }}
-      >
-        <p style={{ fontSize: '40px', lineHeight: '48px',  }}>{explanation}</p>
+
+      <div className='explanation-board'>
+        <p>{explanation}</p>
       </div>
 
       <div style={{ textAlign: 'right' }}>
         <button
           onClick={onNext}
           style={{
-            fontSize: '18px',
+            fontSize: '22px',
             padding: '12px 28px',
             cursor: 'pointer',
-            border: '2px solid black',
-            background: 'white',
+            backgroundColor: 'white',
           }}
         >
           {isLast ? '結果を見る ▶' : '次の問題へ ▶'}
