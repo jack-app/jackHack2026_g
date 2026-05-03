@@ -29,7 +29,7 @@ export function TitleScreen({
     >
       {/* <h1 style={{ margin: 0, fontSize: "48px" }}>タイトル画面</h1> */}
       <h1 style={{ margin: 0, fontSize: "48px" }}>
-        <img src="src/assets/titlelogo.png" width="663" height="377" />
+        <img src="src/assets/titlelogo.png" width="663" height="250px" style={{ objectFit: 'cover', objectPosition: 'top' }}/>
       </h1>
 
       {/*
