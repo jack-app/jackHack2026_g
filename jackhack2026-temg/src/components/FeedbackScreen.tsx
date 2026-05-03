@@ -1,5 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { VideoBackground } from './VideoBackground';
+import seikaiImage from '../assets/seikai.png';
+import fuseikaiImage from '../assets/fuseikai.png'
+
+
 
 type Props = {
   isCorrect: boolean;
@@ -26,21 +30,26 @@ export function FeedbackScreen({ isCorrect, onNext }: Props) {
       {/* フィードバックウィンドウ（後でpng素材に置き換え予定） */}
       <div
         style={{
-          border: 'none',
-          padding: '64px 96px',
-          textAlign: 'center',
+         width: '100%',
+         minHeight: '100%',
+         display: 'flex',
+         alignItems: 'center',
+         justifyContent: 'center',
+         padding: 0,
+         textAlign: 'center',
+          
         }}
       >
-        <p
-          style={{
-            fontSize: '64px',
-            fontWeight: 'bold',
-            margin: 0,
-            color: isCorrect ? '#16a34a' : '#9333ea',
+        <img
+        src={isCorrect ? seikaiImage : fuseikaiImage}
+        alt={isCorrect ? '正解' : '不正解'}
+        style={{
+           width: 'min(98vw, 1200px)',
+           height: 'auto',
+           display: 'block',
+
           }}
-        >
-          {isCorrect ? '正解！' : '不正解…'}
-        </p>
+          />
       </div>
     </VideoBackground>
   );

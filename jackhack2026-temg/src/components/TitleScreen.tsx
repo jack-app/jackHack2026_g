@@ -1,4 +1,5 @@
 import { VideoBackground } from './VideoBackground';
+import startImage from '../assets/start.png';
 
 type Props = {
   onStart: () => void;
@@ -15,18 +16,17 @@ export function TitleScreen({ onStart }: Props) {
         gap: '32px',
       }}
     >
-      <h1 style={{ margin: 0, fontSize: '48px' }}>タイトル画面</h1>
+      <h1 style={{ margin: 0, fontSize: '48px' }}><img src= 'src/assets/titlelogo.png' width='663' height='377'/></h1>
       <button
         onClick={onStart}
         style={{
-          fontSize: '24px',
-          padding: '16px 48px',
+          padding: 0,
           cursor: 'pointer',
-          border: '2px solid black',
-          background: 'white',
+          border: 'transparent',
+          background: 'transparent',
         }}
       >
-        スタート
+        <img src='src/assets/start.button.png' width='400' height= '110'/>
       </button>
     </VideoBackground>
   );
