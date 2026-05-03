@@ -10,7 +10,6 @@ import syutudaiSound from '../assets/sounds/syutudai.mp3';
 
 
 const MAX_TIME = 10;
-const isSmall = window.innerWidth <= 500;
 
 type Props = {
   question: Question;
@@ -19,8 +18,12 @@ type Props = {
   onAnswer: (index: number | null) => void;
 };
 
-
-export function QuestionScreen({ question, questionNumber, totalQuestions, onAnswer }: Props) {
+export function QuestionScreen({
+  question,
+  questionNumber,
+  totalQuestions,
+  onAnswer,
+}: Props) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const selectedIndexRef = useRef<number | null>(null);
 
@@ -49,21 +52,28 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
   return (
     <VideoBackground
       contentStyle={{
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '24px',
-        boxSizing: 'border-box',
-        gap: '16px',
+        display: "flex",
+        flexDirection: "column",
+        padding: "24px",
+        boxSizing: "border-box",
+        gap: "16px",
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
         <TimerBar timeLeft={timeLeft} maxTime={MAX_TIME} />
-        <span style={{ whiteSpace: 'nowrap', fontSize: '24px', fontWeight: 'bold' ,color: '#E8B94A'}}>
+        <span
+          style={{
+            whiteSpace: "nowrap",
+            fontSize: "clamp(14px, 4vw, 24px)",
+            fontWeight: "bold",
+            color: "#E8B94A",
+          }}
+        >
           {timeLeft.toFixed(1)}秒
         </span>
       </div>
 
-      <div style={{ fontSize: '54px', color: '#E8B94A' }}>
+      <div style={{ fontSize: "clamp(32px, 8vw, 54px)", color: "#E8B94A" }}>
         {questionNumber} / {totalQuestions} 問
       </div>
 
@@ -71,27 +81,32 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
       <div
         style={{
           flex: 1,
-          border: 'none',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '32px',
-          boxSizing: 'border-box',
+          border: "none",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "32px",
+          boxSizing: "border-box",
           backgroundImage: `url(${mondaiImage})`,
           backgroundSize: `contain`,
           backgroundPosition: `center`,
           backgroundRepeat: `no-repeat`,
         }}
-      > 
-        <p style={{ fontSize: isSmall ? '30px':'60px',
-          textAlign: 'center', margin: 0, lineHeight: 1.6 }}>
+      >
+        <p
+          style={{
+            fontSize: "clamp(24px, 10vw, 60px)",
+            textAlign: "center",
+            margin: 0,
+            lineHeight: 1.6,
+          }}
+        >
           {question.question}
         </p>
-       
       </div>
 
       {/* 選択肢（後でpng素材に置き換え予定） */}
-      <div style={{ display: 'flex', gap: '16px', height: '160px' }}>
+      <div style={{ display: "flex", gap: "16px", height: "160px" }}>
         {question.choices.map((choice, i) => (
           <button
             key={i}
@@ -99,19 +114,19 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
             style={{
               flex: 1,
               border: `none`,
-              backgroundColor: selectedIndex === i ? `#FFD700` : 'transparent',
+              backgroundColor: selectedIndex === i ? `#FFD700` : "transparent",
               backgroundImage: `url(${sentakusiImage})`,
-              backgroundSize: '100% 100%',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              fontSize: '48px',
+              backgroundSize: "100% 100%",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              fontSize: "clamp(28px, 8vw, 48px)",
               fontWeight: 900,
-              WebkitTextStroke:'0.6px black',
-              letterSpacing: '0.04em',
-              cursor: 'pointer',
-              boxSizing: 'border-box',
-              outline: selectedIndex === i ? '3px solid #ffbb00' : 'none',
-              outlineOffset: '-4px',
+              WebkitTextStroke: "0.6px black",
+              letterSpacing: "0.04em",
+              cursor: "pointer",
+              boxSizing: "border-box",
+              outline: selectedIndex === i ? "3px solid #ffbb00" : "none",
+              outlineOffset: "-4px",
             }}
           >
             {choice}
