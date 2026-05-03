@@ -27,7 +27,7 @@ function FinishComment({ finishcommentscore = 0 }) {
   return (
     <div className="finishcomment">
       <p>{finishcomment?.comment}</p>
-      <img />
+      <div className="fukidashi" />
     </div>
   );
 }
@@ -35,7 +35,7 @@ function FinishComment({ finishcommentscore = 0 }) {
 function FinishCommentImg() {
   return (
     <div className="finishcommentimg">
-      <img src="" />
+      <img src="../src/assets/finish-minecart.png" />
     </div>
   );
 }
@@ -53,7 +53,7 @@ function BackToTitle({ onRestart }: { onRestart: () => void }) {
         }}
       >
         <img
-          src={backImage}
+          src="../src/assets/backtotitle.png"
           alt="タイトルに戻る"
           style={{
             width: "min(60vw,500px)",
@@ -68,12 +68,20 @@ function BackToTitle({ onRestart }: { onRestart: () => void }) {
 
 export function ResultScreen({ score, total, onRestart }: Props) {
   return (
-    <div className="result">
-      <div className="result-top">結果</div>
-      <CorrectCount correctcountscore={score} correctcounttotal={total} />
-      <FinishComment finishcommentscore={score} />
-      <FinishCommentImg />
-      <BackToTitle onRestart={onRestart} />
+    <div
+      style={{
+        backgroundImage: "URL(../src/assets/finish.png)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="result">
+        <div className="result-top">結果</div>
+        <CorrectCount correctcountscore={score} correctcounttotal={total} />
+        <FinishComment finishcommentscore={score} />
+        <FinishCommentImg />
+        <BackToTitle onRestart={onRestart} />
+      </div>
     </div>
   );
 }
