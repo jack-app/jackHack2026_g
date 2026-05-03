@@ -3,6 +3,7 @@ import { useTimer } from '../hooks/useTimer';
 import { TimerBar } from './TimerBar';
 import { VideoBackground } from './VideoBackground';
 import type { Question } from '../types';
+import mondaiImage from '../assets/mondai.png';
 
 const MAX_TIME = 10;
 
@@ -59,11 +60,16 @@ export function QuestionScreen({ question, questionNumber, totalQuestions, onAns
           justifyContent: 'center',
           padding: '32px',
           boxSizing: 'border-box',
+          backgroundImage: `url(${mondaiImage})`,
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       >
-        <p style={{ fontSize: '28px', textAlign: 'center', margin: 0, lineHeight: 1.6 }}>
+        <p style={{ fontSize: '34px', textAlign: 'center', margin: 0, lineHeight: 1.6 }}>
           {question.question}
         </p>
+       
       </div>
 
       {/* 選択肢（後でpng素材に置き換え予定） */}
