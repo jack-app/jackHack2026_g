@@ -25,6 +25,7 @@ export function QuestionScreen({
 }: Props) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const selectedIndexRef = useRef<number | null>(null);
+  const ketteiImage = `${import.meta.env.BASE_URL}assets/ketteibotan.png`;
 
   useEffect(() => {
     const audio = new Audio(syutudaiSound);
@@ -100,7 +101,7 @@ export function QuestionScreen({
           backgroundRepeat: `no-repeat`,
           maxWidth: "80%",
           wordWrap: "break-word",
-          margin: "0 auto",
+          margin: "0 auto", 
         }}
       >
         <p
@@ -143,6 +144,29 @@ export function QuestionScreen({
           </button>
         ))}
       </div>
+   {selectedIndex !== null && (
+  <button
+    onClick={() => onAnswer(selectedIndex)}
+    style={{
+      marginTop: "16px",
+      width: "360px",
+      height: "120px",// ← 添付画像を使う
+      backgroundSize: "100% 100%",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      backgroundColor: "transparent",
+      border: "none",
+      cursor: "pointer",
+      fontSize: "32px",
+      fontWeight: "bold",
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+    }}
+    >
+      <img src={ketteiImage} alt="決定" style={{ width: "100%", height: "100%" }} />
+  </button>
+)}
     </VideoBackground>
   );
 }
