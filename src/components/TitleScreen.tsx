@@ -1,6 +1,7 @@
 import { VideoBackground } from "./VideoBackground";
 import { QuestionModeSelector } from "./QuestionModeSelector";
 // import startImage from "../assets/start.png";
+import "../titlescreen.css";
 
 type Props = {
   onStart: () => void;
@@ -35,8 +36,7 @@ export function TitleScreen({
       <h1 style={{ margin: 0, fontSize: "48px" }}>
         <img
           src={titleLogoImage}
-          width="663"
-          height="250px"
+          className="titlelogo"
           style={{ objectFit: "cover", objectPosition: "top" }}
         />
       </h1>
@@ -53,7 +53,7 @@ export function TitleScreen({
         style={{
           display: "flex",
           gap: "16px",
-          flexWrap: "wrap",
+          flexWrap: "nowrap",
           justifyContent: "center",
         }}
       >
@@ -86,7 +86,7 @@ export function TitleScreen({
             background: "transparent",
           }}
         >
-          <img src={startImage} width="400" height="110" />
+          <img src={startImage} className="startbutton" />
         </button>
         <button
           onClick={onAddQuestion}
@@ -98,7 +98,7 @@ export function TitleScreen({
             background: "transparent",
           }}
         >
-          <img src={mondaitouroku} width="200" height="120" />
+          <img src={mondaitouroku} className="touroku" />
         </button>
         <button
           onClick={onViewQuestions}
@@ -110,7 +110,7 @@ export function TitleScreen({
             background: "transparent",
           }}
         >
-          <img src={mondaiitiran} width="180" height="120" />
+          <img src={mondaiitiran} className="itiran" />
         </button>
       </div>
     </VideoBackground>

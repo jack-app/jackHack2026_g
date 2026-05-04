@@ -1,53 +1,86 @@
 .parent {
-    position: relative;
-    height: 200px;
+  position: relative;
+  height: 200px;
 }
 .title {
-    text-shadow:
+  text-shadow:
     3px 3px 0 #996633,
     -3px 3px 0 #996633,
     3px -3px 0 #996600,
-    -3px -3px 0 #996600 ;
-    transform: scaleX(1.25);
-
+    -3px -3px 0 #996600;
+  transform: scaleX(1.25);
 }
-.トロッコ{
-    color:#FFCC00;
-    font-size: 130px;
-    position: absolute;
-    top:150px;
-    right:350px;
+.トロッコ {
+  color: #ffcc00;
+  font-size: 130px;
+  position: absolute;
+  top: 150px;
+  right: 350px;
 }
-.まなベンチャー{
-    color:#EE0000;
-    font-size: 90px;
-    position: absolute;
-    top:250px;
-    right:300px;
+.まなベンチャー {
+  color: #ee0000;
+  font-size: 90px;
+  position: absolute;
+  top: 250px;
+  right: 300px;
 }
 .スタートボタン {
-    color: #FFD700;
-    font-size: 50px;
-    background: radial-gradient(circle, #8B4513, #630);
-    position: absolute;
-    bottom: -360px;
-    right: 380px;
-    height: 80px;
-    width: 300px;
-    border-radius: 30%;
-    border: 2px solid #FFD700;
+  color: #ffd700;
+  font-size: 50px;
+  background: radial-gradient(circle, #8b4513, #630);
+  position: absolute;
+  bottom: -360px;
+  right: 380px;
+  height: 80px;
+  width: 300px;
+  border-radius: 30%;
+  border: 2px solid #ffd700;
 }
-.問題追加ボタン { color: #FFD700;
-    font-size: 20;
-    background: radial-gradient(circle, #8B4513, #630);
+.問題追加ボタン {
+  color: #ffd700;
+  font-size: 20;
+  background: radial-gradient(circle, #8b4513, #630);
 
-    position: absolute;
-    bottom: -350px;
-    right: 250px;
-    height: 65px;
-    width: 65px;
-    border: 2px solid #FC0;
-    border-radius:100%;
-    transform-origin:0 0;
-
+  position: absolute;
+  bottom: -350px;
+  right: 250px;
+  height: 65px;
+  width: 65px;
+  border: 2px solid #fc0;
+  border-radius: 100%;
+  transform-origin: 0 0;
+}
+.itiran {
+  width: 13.5vw;
+  height: auto;
+}
+.touroku {
+  width: 15vw;
+  height: auto;
+}
+.startbutton {
+  width: 30vw;
+  height: auto;
+}
+.titlelogo {
+  width: 80vw;
+  height: 60vh;
+}
+@media (max-width: 800px) {
+  .titlelogo {
+    width: 608px;
+    height: 230px;
+  }
+}
+@media (max-width: 500px) {
+  .titlelogo {
+    width: 553px;
+    height: 209px;
+  }
+}
+@media (max-width: 400px) {
+  .titlelogo {
+    width: 442px;
+    height: 166px;
+  }
 }
