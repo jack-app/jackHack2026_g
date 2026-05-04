@@ -1,7 +1,7 @@
 import "../finish.css";
 import { finishCommentContent } from "../data/finishcomment";
 // import { VideoBackground } from "./VideoBackground";
-import backImage from "../assets/taitorunimodoru.png";
+// import backImage from "../assets/taitorunimodoru.png";
 
 type Props = {
   score: number;
