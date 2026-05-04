@@ -1,6 +1,10 @@
 import { useState } from "react";
 import type { Question } from "../types";
 
+const QUESTION_MAX_LENGTH = 25;
+const CHOICE_MAX_LENGTH = 15;
+const EXPLANATION_MAX_LENGTH = 40;
+
 type Props = {
   isOpen: boolean;
   onClose: () => void;
@@ -22,16 +26,32 @@ export function AddQuestionModal({ isOpen, onClose, onSubmit }: Props) {
       setError("問題文を入力してください");
       return;
     }
+    if (question.length > QUESTION_MAX_LENGTH) {
+      setError(`問題文は${QUESTION_MAX_LENGTH}文字までです`);
+      return;
+    }
     if (!choice1.trim()) {
       setError("選択肢1を入力してください");
+      return;
+    }
+    if (choice1.length > CHOICE_MAX_LENGTH) {
+      setError(`選択肢1は${CHOICE_MAX_LENGTH}文字までです`);
       return;
     }
     if (!choice2.trim()) {
       setError("選択肢2を入力してください");
       return;
     }
+    if (choice2.length > CHOICE_MAX_LENGTH) {
+      setError(`選択肢2は${CHOICE_MAX_LENGTH}文字までです`);
+      return;
+    }
     if (!explanation.trim()) {
       setError("解説を入力してください");
+      return;
+    }
+    if (explanation.length > EXPLANATION_MAX_LENGTH) {
+      setError(`解説は${EXPLANATION_MAX_LENGTH}文字までです`);
       return;
     }
 
@@ -106,14 +126,25 @@ export function AddQuestionModal({ isOpen, onClose, onSubmit }: Props) {
               boxSizing: "border-box",
             }}
           />
+          <div
+            style={{
+              marginTop: "4px",
+              fontSize: "12px",
+              color: question.length > QUESTION_MAX_LENGTH ? "#c62828" : "#666",
+            }}
+          >
+            {question.length}/{QUESTION_MAX_LENGTH}文字
+          </div>
         </div>
 
-        <div style={{ 
-          marginBottom: "16px",
-          marginRight: '20px',
-          display: 'inline-block',
-          width: 'calc(50% - 10px)',
-         }}>
+        <div
+          style={{
+            marginBottom: "16px",
+            marginRight: "20px",
+            display: "inline-block",
+            width: "calc(50% - 10px)",
+          }}
+        >
           <label
             style={{
               display: "block",
@@ -135,13 +166,24 @@ export function AddQuestionModal({ isOpen, onClose, onSubmit }: Props) {
               boxSizing: "border-box",
             }}
           />
+          <div
+            style={{
+              marginTop: "4px",
+              fontSize: "12px",
+              color: choice1.length > CHOICE_MAX_LENGTH ? "#c62828" : "#666",
+            }}
+          >
+            {choice1.length}/{CHOICE_MAX_LENGTH}文字
+          </div>
         </div>
 
-        <div style={{ 
-          marginBottom: "16px",
-          display: 'inline-block',
-          width: 'calc(50% - 10px)',
-        }}>
+        <div
+          style={{
+            marginBottom: "16px",
+            display: "inline-block",
+            width: "calc(50% - 10px)",
+          }}
+        >
           <label
             style={{
               display: "block",
@@ -163,6 +205,15 @@ export function AddQuestionModal({ isOpen, onClose, onSubmit }: Props) {
               boxSizing: "border-box",
             }}
           />
+          <div
+            style={{
+              marginTop: "4px",
+              fontSize: "12px",
+              color: choice2.length > CHOICE_MAX_LENGTH ? "#c62828" : "#666",
+            }}
+          >
+            {choice2.length}/{CHOICE_MAX_LENGTH}文字
+          </div>
         </div>
 
         <div style={{ marginBottom: "16px" }}>
@@ -222,6 +273,18 @@ export function AddQuestionModal({ isOpen, onClose, onSubmit }: Props) {
               boxSizing: "border-box",
             }}
           />
+          <div
+            style={{
+              marginTop: "4px",
+              fontSize: "12px",
+              color:
+                explanation.length > EXPLANATION_MAX_LENGTH
+                  ? "#c62828"
+                  : "#666",
+            }}
+          >
+            {explanation.length}/{EXPLANATION_MAX_LENGTH}文字
+          </div>
         </div>
 
         {error && (
