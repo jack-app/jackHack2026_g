@@ -9,11 +9,14 @@ import '../explanation.css'
 
 type Props = {
   explanation: string;
+  correctAnswer: string;
   onNext: () => void;
   isLast: boolean;
 };
 
-export function ExplanationScreen({ explanation, onNext, isLast }: Props) {
+
+
+export function ExplanationScreen({ explanation, correctAnswer, onNext, isLast }: Props) {
   useEffect(() => {
     const audio = new Audio(kaisetuSound);
     audio.volume = 0.7;
@@ -36,9 +39,13 @@ export function ExplanationScreen({ explanation, onNext, isLast }: Props) {
       }}
       
     >
+    
 
       <div className='explanation-board'>
         <p>{explanation}</p>
+        <div className="correct-answer">
+          <p>正解: {correctAnswer}</p>
+        </div>
       </div>
 
       <div style={{ textAlign: 'right' }}>
@@ -60,6 +67,8 @@ export function ExplanationScreen({ explanation, onNext, isLast }: Props) {
             display: 'inline-block',
           }}
           />
+
+        
         </button>
       </div>
     </VideoBackground>

@@ -181,6 +181,7 @@ const stopBgm = () => {
     return (
       <ExplanationScreen
         explanation={shuffledQuestions[currentIndex].explanation}
+        correctAnswer={shuffledQuestions[currentIndex].choices[shuffledQuestions[currentIndex].correctIndex]}
         onNext={handleNext}
         isLast={currentIndex + 1 >= shuffledQuestions.length}
       />
