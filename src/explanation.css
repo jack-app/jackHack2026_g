@@ -5,7 +5,7 @@
     padding: 24px;
     padding-top: 75px;
     box-sizing: border-box;
-    background-image: url(../src/assets/kaisetu.png);
+    /* background-image: url(../src/assets/kaisetu.png); */
     background-size: 110%;
     background-position: center;
     max-width: 800px;
@@ -27,7 +27,7 @@
     padding: 20px;
     padding-top: 40px;
     box-sizing: border-box;
-    background-image: url(../src/assets/kaisetu-sp.png);
+    /* background-image: url(../src/assets/kaisetu-sp.png); */
     background-size: cover;
     aspect-ratio: 119 / 180;
     height: 80%;
