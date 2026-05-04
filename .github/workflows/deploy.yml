@@ -28,14 +28,16 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        working-directory: ./jackhack2026-temg
 
       - name: Build
         run: npm run build
+        working-directory: ./jackhack2026-temg
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./jackhack2026-temg/dist
 
   deploy:
     needs: build
@@ -47,3 +49,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          working-directory: ./jackhack2026-temg
