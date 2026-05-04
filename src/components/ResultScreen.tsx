@@ -33,14 +33,16 @@ function FinishComment({ finishcommentscore = 0 }) {
 }
 
 function FinishCommentImg() {
+  const finish_minicart = `${import.meta.env.BASE_URL}assets/finish-minecart.png`;
   return (
     <div className="finishcommentimg">
-      <img src="../src/assets/finish-minecart.png" />
+      <img src={finish_minicart} />
     </div>
   );
 }
 
 function BackToTitle({ onRestart }: { onRestart: () => void }) {
+  const backtotitleImage = `${import.meta.env.BASE_URL}assets/backtotitle.png`;
   return (
     <div className="backtotitle">
       <button
@@ -53,7 +55,7 @@ function BackToTitle({ onRestart }: { onRestart: () => void }) {
         }}
       >
         <img
-          src="../src/assets/backtotitle.png"
+          src={backtotitleImage}
           alt="タイトルに戻る"
           style={{
             width: "min(60vw,500px)",
@@ -67,10 +69,11 @@ function BackToTitle({ onRestart }: { onRestart: () => void }) {
 }
 
 export function ResultScreen({ score, total, onRestart }: Props) {
+  const finishImage = `${import.meta.env.BASE_URL}assets/finish.png`;
   return (
     <div
       style={{
-        backgroundImage: "URL(../src/assets/finish.png)",
+        backgroundImage: `url(${finishImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

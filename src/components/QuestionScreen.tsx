@@ -3,10 +3,14 @@ import { useTimer } from "../hooks/useTimer";
 import { TimerBar } from "./TimerBar";
 import { VideoBackground } from "./VideoBackground";
 import type { Question } from "../types";
-import mondaiImage from "../assets/mondai.png";
-import sentakusiImage from "../assets/sentakusi.png";
+// import mondaiImage from "../assets/mondai.png";
+const mondaiImage = `${import.meta.env.BASE_URL}assets/mondai.png`;
+// import sentakusiImage from "../assets/sentakusi.png";
+const sentakusiImage = `${import.meta.env.BASE_URL}assets/sentakusi.png`;
 import { useEffect } from "react";
-import syutudaiSound from "../assets/sounds/syutudai.mp3";
+// import syutudaiSound from "../assets/sounds/syutudai.mp3";
+
+const syutudaiSound = `${import.meta.env.BASE_URL}assets/sounds/syutudai.mp3`;
 
 const MAX_TIME = 10;
 

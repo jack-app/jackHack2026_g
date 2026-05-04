@@ -17,6 +17,10 @@ export function TitleScreen({
   questionMode,
   onQuestionModeChange,
 }: Props) {
+  const titleLogoImage = `${import.meta.env.BASE_URL}assets/titlelogo.png`;
+  const startImage = `${import.meta.env.BASE_URL}assets/start.button.png`;
+  const mondaitouroku = `${import.meta.env.BASE_URL}assets/mondaitouroku.png`;
+  const mondaiitiran = `${import.meta.env.BASE_URL}assets/mondaiitiran.png`;
   return (
     <VideoBackground
       contentStyle={{
@@ -30,7 +34,7 @@ export function TitleScreen({
       {/* <h1 style={{ margin: 0, fontSize: "48px" }}>タイトル画面</h1> */}
       <h1 style={{ margin: 0, fontSize: "48px" }}>
         <img
-          src="src/assets/titlelogo.png"
+          src={titleLogoImage}
           width="663"
           height="250px"
           style={{ objectFit: "cover", objectPosition: "top" }}
@@ -82,7 +86,7 @@ export function TitleScreen({
             background: "transparent",
           }}
         >
-          <img src="src/assets/start.button.png" width="400" height="110" />
+          <img src={startImage} width="400" height="110" />
         </button>
         <button
           onClick={onAddQuestion}
@@ -94,7 +98,7 @@ export function TitleScreen({
             background: "transparent",
           }}
         >
-          <img src="src/assets/mondaitouroku.png" width="200" height="120" />
+          <img src={mondaitouroku} width="200" height="120" />
         </button>
         <button
           onClick={onViewQuestions}
@@ -106,7 +110,7 @@ export function TitleScreen({
             background: "transparent",
           }}
         >
-          <img src="src/assets/mondaiitiran.png" width="180" height="120" />
+          <img src={mondaiitiran} width="180" height="120" />
         </button>
       </div>
     </VideoBackground>
