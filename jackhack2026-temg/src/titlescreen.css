@@ -38,9 +38,8 @@
     border: 2px solid #FFD700;
 }
 .問題追加ボタン { color: #FFD700;
-    font-size: 20;
+    font-size: 20px;
     background: radial-gradient(circle, #8B4513, #630);
-
     position: absolute;
     bottom: -350px;
     right: 250px;
@@ -50,4 +49,38 @@
     border-radius:100%;
     transform-origin:0 0;
 
+}
+.itiran {
+    width: 13.5vw;
+    height: auto;
+}
+.touroku {
+    width:15vw;
+    height: auto;
+}
+.startbutton {
+    width: 30vw;
+    height: auto;
+}
+.titlelogo {
+    width: 80vw;
+    height: 60vh;
+}
+@media (max-width: 800px) {
+.titlelogo {
+    width: 608px;
+    height: 230px;
+}
+}
+@media (max-width: 500px) {
+.titlelogo {
+    width: 553px;
+    height: 209px;
+}
+}
+@media (max-width: 400px) {
+.titlelogo {
+    width:442px;
+    height:166px;
+}
 }

@@ -1,7 +1,7 @@
 import { VideoBackground } from "./VideoBackground";
 import { QuestionModeSelector } from "./QuestionModeSelector";
 import startImage from "../assets/start.png";
-
+import '../titlescreen.css'
 type Props = {
   onStart: () => void;
   onAddQuestion: () => void;
@@ -29,7 +29,7 @@ export function TitleScreen({
     >
       {/* <h1 style={{ margin: 0, fontSize: "48px" }}>タイトル画面</h1> */}
       <h1 style={{ margin: 0, fontSize: "48px" }}>
-        <img src="src/assets/titlelogo.png" width="663" height="250px" style={{ objectFit: 'cover', objectPosition: 'top' }}/>
+        <img src="src/assets/titlelogo.png" className="titlelogo" style={{ objectFit: 'cover', objectPosition: 'top' }}/>
       </h1>
 
       {/*
@@ -44,7 +44,7 @@ export function TitleScreen({
         style={{
           display: "flex",
           gap: "16px",
-          flexWrap: "wrap",
+          flexWrap: "nowrap",
           justifyContent: "center",
         }}
       >
@@ -68,6 +68,7 @@ export function TitleScreen({
             }}
           />
         </button> */}
+        
         <button
           onClick={onStart}
           style={{
@@ -77,7 +78,7 @@ export function TitleScreen({
             background: "transparent",
           }}
         >
-          <img src="src/assets/start.button.png" width="400" height="110" />
+          <img src="src/assets/start.button.png" className= "startbutton" />
         </button>
         <button
           onClick={onAddQuestion}
@@ -89,7 +90,7 @@ export function TitleScreen({
             background: "transparent",
           }}
         >
-          <img src= "src/assets/mondaitouroku.png" width='200' height= '120'/>
+          <img src= "src/assets/mondaitouroku.png" className="touroku"/>
         </button>
         <button
           onClick={onViewQuestions}
@@ -101,7 +102,7 @@ export function TitleScreen({
             background: "transparent",
           }}
         >
-          <img src= "src/assets/mondaiitiran.png" width='180' height= '120'/>
+          <img src= "src/assets/mondaiitiran.png" className="itiran"/>
         </button>
       </div>
     </VideoBackground>
