@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef,useState } from "react";
 import type { Phase, Question } from "./types";
 import { shuffle } from "./utils/shuffle";
 import { loadUserQuestions, saveUserQuestion } from "./utils/questionStorage";
@@ -10,10 +10,12 @@ import { ResultScreen } from "./components/ResultScreen";
 import { AddQuestionModal } from "./components/AddQuestionModal";
 import { ViewQuestionsModal } from "./components/ViewQuestionsModal";
 import questionsData from "./data/questions.json";
-import { useEffect, useRef } from "react";
+const bgmSound = `${import.meta.env.BASE_URL}assets/sounds/BGM.mp3`;
+const switchSound = `${import.meta.env.BASE_URL}assets/sounds/switch.mp3`;
+
 // import bgmSound from "./assets/sounds/BGM.mp3";
 
-const bgmSound = `${import.meta.env.BASE_URL}assets/sounds/BGM.mp3`;
+
 
 const defaultQuestions = questionsData as Question[];
 
@@ -106,6 +108,7 @@ export default function App() {
     setAllQuestions([...allQuestions, newQuestion]);
   };
   const bgmRef = useRef<HTMLAudioElement | null>(null);
+  const switchAudioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const bgm = new Audio(bgmSound);
@@ -119,6 +122,30 @@ export default function App() {
       bgm.currentTime = 0;
     };
   }, []);
+  useEffect(() => {
+  switchAudioRef.current = new Audio(switchSound);
+  switchAudioRef.current.volume = 0.5;
+
+  const handleButtonClick = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+
+    if (!target.closest("button")) return;
+
+    const audio = switchAudioRef.current;
+    if (!audio) return;
+
+    audio.currentTime = 0;
+    audio.play().catch((error) => {
+      console.log("効果音の再生に失敗しました:", error);
+    });
+  };
+
+  document.addEventListener("click", handleButtonClick);
+
+  return () => {
+    document.removeEventListener("click", handleButtonClick);
+  };
+}, []);
 
   const playBgm = () => {
     const bgm = bgmRef.current;
