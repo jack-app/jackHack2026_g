@@ -70,31 +70,33 @@ export function ExplanationScreen({
           maxWidth: isMobile ? "300px" : "800px",
           height: isMobile ? "80%" : "70%",
           aspectRatio: isMobile ? "119 / 180" : "409 / 247",
-          // display: "flex",
+          display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <div
-          style={{
-            fontSize: "32px",
-            lineHeight: "40px",
-            fontWeight: "700",
-            color: "#d32f2f",
-          }}
-        >
-          <p>正解: {correctAnswer}</p>
+        <div>
+          <p
+            style={{
+              fontSize: isMobile ? "24px" : "36px",
+              lineHeight: isMobile ? "32px" : "48px",
+              fontWeight: 600,
+              margin: 0,
+            }}
+          >
+            {explanation}
+          </p>
+          <div
+            style={{
+              fontSize: "32px",
+              lineHeight: "40px",
+              fontWeight: "700",
+              color: "#d32f2f",
+            }}
+          >
+            <p>正解: {correctAnswer}</p>
+          </div>
         </div>
-        <p
-          style={{
-            fontSize: isMobile ? "24px" : "36px",
-            lineHeight: isMobile ? "32px" : "48px",
-            fontWeight: 600,
-            margin: 0,
-          }}
-        >
-          {explanation}
-        </p>
       </div>
 
       <div style={{ textAlign: "right" }}>
