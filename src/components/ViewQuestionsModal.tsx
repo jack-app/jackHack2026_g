@@ -81,7 +81,8 @@ export function ViewQuestionsModal({ isOpen, onClose, onDelete }: Props) {
                         display: "inline-block",
                         padding: "8px 12px",
                         marginRight: "8px",
-                        backgroundColor: "#FF4050",
+                        backgroundColor:
+                          q.correctIndex === 0 ? "#FF4050" : "#888888",
                         borderRadius: "4px",
                       }}
                     >
@@ -99,7 +100,8 @@ export function ViewQuestionsModal({ isOpen, onClose, onDelete }: Props) {
                         display: "inline-block",
                         padding: "8px 12px",
                         marginRight: "8px",
-                        backgroundColor: "#888888",
+                        backgroundColor:
+                          q.correctIndex === 1 ? "#FF4050" : "#888888",
                         borderRadius: "4px",
                       }}
                     >
